@@ -65,5 +65,8 @@ public class MainActivity extends AppCompatActivity {
     /*
     1차시 -- 깃, 토스트 메시지 띄워보기
     2차시 -- 깃, 로그 찍고 액티비티 주기 어떻게 돌아가는지 설명 => 깐깐하게 코드 관리 잘 해야함!(버그 발생 우려)
-    */
+    3차시 -- Intent Filter, manifest.xml은 앱에 대한 정보 기술 + 퍼미션 지정, 자료형(Primitive, Reference + Wrapper - Integer에서 null 사용)
+             동기=await(커피 나올 때까지 계속 기다림)와 비동기(던져넣고 할일 하고 끝나면 다시 받아감), 생성자, 접근제어자, getter & setter
+             싱글 톤 패턴, 클래스 상속, super 사용법, 여담으로 오버로딩, 오버라이딩 차이
+     */
 }
