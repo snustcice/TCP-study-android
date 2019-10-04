@@ -68,5 +68,6 @@ public class MainActivity extends AppCompatActivity {
     3차시 -- Intent Filter, manifest.xml은 앱에 대한 정보 기술 + 퍼미션 지정, 자료형(Primitive, Reference + Wrapper - Integer에서 null 사용)
              동기=await(커피 나올 때까지 계속 기다림)와 비동기(던져넣고 할일 하고 끝나면 다시 받아감), 생성자, 접근제어자, getter & setter
              싱글 톤 패턴, 클래스 상속, super 사용법, 여담으로 오버로딩, 오버라이딩 차이
+    4차시 -- 뷰(액티비티랑 다름. 화면에 표시되는 컴포넌트 최소 단위), 버튼, xml(내가 원하는 태그),
      */
 }
