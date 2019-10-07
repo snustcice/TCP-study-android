@@ -4,17 +4,27 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static final String TAG = "MainActivity"; //자바에서 상수 만들 때 쓰는 방법
+    private static final String TAG = "MainActivity"; //자바에서 상수 만들 때 쓰는 방법, final -- 참조 불가하도록 설정
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {    //액티비티 실행될 때 한번만 호출됨 e.g. UI 컴포넌트(버튼 등등..)
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main); //Button oneButton = findViewById(R.id.oneButton)은 꼭 이 아래에다가 해야 함, 그렇지 않으면 널 포인터 오류 남.
 
+        Button oneButton = findViewById(R.id.oneButton);   //AppCompatActivity 에서 온 findViewById. 오타를 쳤거나 extends로 상속 받지 못하면 빨간색으로 오류 남.
+        oneButton.setOnClickListener(new View.OnClickListener() {   //Listener -- 특정 이벤트 생길 때까지 기다렸다가 이벤트 생기면 처리하는 메서드, "클릭했을 때 이 내용을 실행해 주세요" 하는 의미
+                                                                    //implements 사용해서 구현할 수 도 있음(인터페이스)
+            @Override
+            public void onClick(View view) {
+                    Toast.makeText(MainActivity.this, "1번 버튼을 눌렀습니다.", Toast.LENGTH_SHORT).show();
+            }
+        });
         Log.v(TAG, "onCreate()");   //onCreate() 안의 내용 수정, 로그 찍는다
     }
 
@@ -63,11 +73,17 @@ public class MainActivity extends AppCompatActivity {
     //프로젝트 파일 꼬이면 폴더 안의 Test.iml, .idea 폴더 삭제 후 다시 실행시키면 될 때 있음 (프로젝트 파일 꼬임?)
 
     /*
+    <내용 정리>
     1차시 -- 깃, 토스트 메시지 띄워보기
     2차시 -- 깃, 로그 찍고 액티비티 주기 어떻게 돌아가는지 설명 => 깐깐하게 코드 관리 잘 해야함!(버그 발생 우려)
     3차시 -- Intent Filter, manifest.xml은 앱에 대한 정보 기술 + 퍼미션 지정, 자료형(Primitive, Reference + Wrapper - Integer에서 null 사용)
              동기=await(커피 나올 때까지 계속 기다림)와 비동기(던져넣고 할일 하고 끝나면 다시 받아감), 생성자, 접근제어자, getter & setter
              싱글 톤 패턴, 클래스 상속, super 사용법, 여담으로 오버로딩, 오버라이딩 차이
     4차시 -- 뷰(액티비티랑 다름. 화면에 표시되는 컴포넌트 최소 단위), 버튼, xml(내가 원하는 태그),
+    5차시 -- 화변 몇대 몇 비율로 나누기, pedding과 margin의 차이(네모칸 안과 밖에 여백 준다), Linear와 Relative의 차이 -- Linear는 부모 쪽에서, Relative는 자식 쪽에서 위치를 수정해 줘야 함.
+             android:orientation 치는 것 까먹지 않도록 주의, 인터페이스(implements 사용) -> 매우 어려움(어떤 동물이 오든지 eatinterface로 다룰 수 있음), 좀 더 찾아봐야 함
+             constraintLayout은 무엇인가(단순한 계층 구조 <-> LinearLayout 3단 계층 구조)
      */
+
+
 }
