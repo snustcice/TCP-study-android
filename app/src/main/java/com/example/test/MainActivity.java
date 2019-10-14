@@ -2,10 +2,12 @@ package com.example.test;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,13 +20,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main); //Button oneButton = findViewById(R.id.oneButton)은 꼭 이 아래에다가 해야 함, 그렇지 않으면 널 포인터 오류 남.
 
         Button oneButton = findViewById(R.id.oneButton);   //AppCompatActivity 에서 온 findViewById. 오타를 쳤거나 extends로 상속 받지 못하면 빨간색으로 오류 남.
-        oneButton.setOnClickListener(new View.OnClickListener() {   //Listener -- 특정 이벤트 생길 때까지 기다렸다가 이벤트 생기면 처리하는 메서드, "클릭했을 때 이 내용을 실행해 주세요" 하는 의미
-                                                                    //implements 사용해서 구현할 수 도 있음(인터페이스)
+        oneButton.setOnClickListener (new View.OnClickListener(){
             @Override
-            public void onClick(View view) {
-                    Toast.makeText(MainActivity.this, "1번 버튼을 눌렀습니다.", Toast.LENGTH_SHORT).show();
+            public void onClick(View view){
+                Intent intent = new Intent (MainActivity.this, ListViewActivity.class); //원래 있던 내용 날리고 ListViewActivity 보기 위한 내용으로 변경
+                        startActivity(intent);
             }
         });
+
+
         Log.v(TAG, "onCreate()");   //onCreate() 안의 내용 수정, 로그 찍는다
     }
 
@@ -83,7 +87,9 @@ public class MainActivity extends AppCompatActivity {
     5차시 -- 화변 몇대 몇 비율로 나누기, pedding과 margin의 차이(네모칸 안과 밖에 여백 준다), Linear와 Relative의 차이 -- Linear는 부모 쪽에서, Relative는 자식 쪽에서 위치를 수정해 줘야 함.
              android:orientation 치는 것 까먹지 않도록 주의, 인터페이스(implements 사용) -> 매우 어려움(어떤 동물이 오든지 eatinterface로 다룰 수 있음), 좀 더 찾아봐야 함
              constraintLayout은 무엇인가(단순한 계층 구조 <-> LinearLayout 3단 계층 구조)
+    6차시 -- 가이드라인(쓸모없는 마진값들 없는지 확인해 줘야 함) -- 동적으로 계산해 줌(휴대폰 따라 알아서 조정) Constraint Layout 마무리
+             ListView(해당 아이템 목록을 보여주는 뷰), Log.v는 Verbose(모든 로그 출력)일 때 출력, . 뒤에 영어 따라서 다른 로그 찍을 수 있음(e.g. Log.d -- debug)
+             id 뒤에 초록색 밑줄로 나오는 것도 있음(잘못 친거 아닌지 확인), adapter(어댑터), Listview는 미리 뷰를 만들어 놓고 갈아 끼우는 위치만 바꾸고 데이터 바꿈(재사용!)
+
      */
-
-
 }
