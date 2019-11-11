@@ -35,7 +35,7 @@ public class CustomListAdapter extends BaseAdapter {
         return i;
     }
 
-    //가장 중요한 부분!
+    //가장 중요한 부분!!!!!
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         if(view == null){   //뷰가 초기화된 상태인지 아닌지 확인한다. 즉 여기 조건문 안은 초기 상태에서 실행된다

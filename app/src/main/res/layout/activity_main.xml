@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!--기존과 동일한 모양의 툴바-->
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="0dp"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/toolbar"/>
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
@@ -81,5 +91,6 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.7" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

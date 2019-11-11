@@ -1,7 +1,9 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <!-- Using Comments in
+    .xml file-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar"> <!-- 기본적으로 생성되는 Action Bar를 삭제하고 우리가 만든 툴바를 쓰기 위함 -->
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

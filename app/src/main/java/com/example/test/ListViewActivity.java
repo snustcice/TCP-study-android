@@ -1,3 +1,4 @@
+//20191111 인식 오류 해결 : Tools -> SDK Manager --> 오류에서 나왔던 것 설치 안되어 있으면 체크박스 체크, apply 누르고 다운로드 끝나면 바로 기기 정상적으로 읽어들임
 package com.example.test;
 
 import androidx.appcompat.app.AppCompatActivity;

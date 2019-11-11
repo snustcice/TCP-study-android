@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<!-- .xml 파일 이름을 defualt로 사용하면 안됨(예약어인듯?) , 위 menu에 빨간줄 생김
+    대신 다른거로 바꾸면(ex. renamed) 정상 작동-->
+    <item
+        android:id="@+id/action_icon"
+        android:icon="@drawable/baseline_search_24"
+        android:title="검색"
+        app:showAsAction="always"/>
+
+    <item
+        android:id="@+id/action_settings"
+        android:title="설정"
+        app:showAsAction="never"/>
+
+    <item
+        android:id="@+id/action_another"
+        android:title="위치에 영향을 받는 설정 아이템"
+        app:showAsAction="never"/>
+</menu>
