@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -82,13 +83,16 @@ public class MainActivity extends AppCompatActivity {
     //import 해줄때 appcompat 포함된 거로 함 --> mainactivity가 appcompat을 상속받아서 똑같은 스타일로 맞춰주기 위함
     private void showDialog()
     {
+        final EditText editText = new EditText(this);
         AlertDialog.Builder builder = new AlertDialog.Builder(this);    //builder 객체 생성(만들어주는 애), 메서드를 호출해서 원하는 최종 결과를 만들어줌
         builder.setTitle("AlertDialog Title");
         builder.setMessage("AlertDialog Content");
+        builder.setView(editText);
+
         builder.setPositiveButton("예(긍정적)",
                 new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
-                        Toast.makeText(getApplicationContext(),"긍정적인 선택지를 선택했습니다.",Toast.LENGTH_LONG).show();   //예제에선 토스트 메시지 사용했지만 복잡한 행동도 실행 가능함
+                        Toast.makeText(getApplicationContext(),editText.getText(),Toast.LENGTH_LONG).show();   //예제에선 토스트 메시지 사용했지만 복잡한 행동도 실행 가능함
                     }
                 });
         builder.setNegativeButton("아니오(부정적)",
@@ -166,5 +170,9 @@ public class MainActivity extends AppCompatActivity {
     7차시 -- Adapter(자원을 효율적으로 쓰기 위함, 뷰 객체 새로 만들지 않고 글자만 바꾸는 게 효율적임) << CustomAdapter(글자, 사진과 같이 복잡한 리스트뷰를 쓰기 위해서)
 
     8차시 -- ActionBar(Toolbar, AppBar) + Menu , build tool(ex. maven, gradle, ...)
+
+    9차시 -- editText
+
+    10차시 --
      */
 }
