@@ -173,6 +173,9 @@ public class MainActivity extends AppCompatActivity {
 
     9차시 -- editText
 
-    10차시 --
+    10차시 -- 과제 설명(txt 파일 참고), Gradle 리마인드, Retrofit(HTTP client, JSON 타입으로 데이터를 주고받음. GET 방식 : CRUD에서 R. 서로 서버랑 연결해주는 등 실제 작동은 알아서 해줌. JSON 변환기 제공)
+              프로세스와 스레드 개념 설명 + UI 스레드(사용자 입력 받아서 그때그때 동작을 해야 함). 자바는 직접 스레드 구현 가능하지만 안드로이드에서 AsyncTask라는 기능을 제공 / Retrofit은 AsyncTask 기능도 제공
+
+    11차시 --
      */
 }
